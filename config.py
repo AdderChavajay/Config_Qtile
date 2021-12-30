@@ -134,30 +134,37 @@ keys = [
     Key([], "XF86AudioMute", lazy.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle"), desc="mute volumen"),
 
     #brightness of the screen
-    Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%"), desc="+ brightness of the screen"),
-    Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-"), desc="- brightness of the screen"),
+    Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +5%"), desc="+ brightness of the screen"),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 1%-"), desc="- brightness of the screen"),
     
     # start Rofi -show drun
     Key([mod], "m", lazy.spawn("rofi -show drun"), desc="Start menu"),
     
     # start visual studio code
     Key([mod], "v", lazy.spawn("code"), desc="Visual Studio Code"),
-    # controlers sound alsa-utils
-#     keys= [
-#     #...
-#     # Sound
-#     Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
-#     Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 0 sset Master 1- unmute")),
-#     Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 0 sset Master 1+ unmute"))
-#    ]
+
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
 
+    #Reload the config Qtile
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawncmd(),
-        desc="Spawn a command using a prompt widget"),
+
+    #Screen Red for protection eye
+    Key([mod], "r", lazy.spawn("redshift -O 5400")),
+    Key([mod, "shift"], "r", lazy.spawn("redshift -x")),
+
+    #poweroff System 
+    Key([mod, "control", "shift"], "p", lazy.spawn("systemctl poweroff")),
+
+    #suspen System 
+    Key([mod, "control"], "u", lazy.spawn("systemctl suspend")),
+
+    # reboot system
+    Key([mod, "control", "shift"], "r", lazy.spawn("systemctl reboot")),
+    # Key([mod], "r", lazy.spawncmd(),
+    #     desc="Spawn a command using a prompt widget"),
 ]
 
 groups = [Group(i) for i in 
