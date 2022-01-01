@@ -16,7 +16,7 @@ this programs intall:
 -> brightnessctl (for control brightness),
 -> pactl (for control volume),
 -> Ho my bash (Optional for decorate Alacritty)
-
+-> scrot
 ################################################
 #  the other key combinations can be found in  #
 ################################################

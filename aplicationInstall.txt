@@ -5,12 +5,15 @@ this configuration is focused on laptops (portable computers).
 
 this programs intall:
 
--> Alacritty (),
--> Rofi (Menu press [MOD  + m] for start ),
--> Redshift (Red Screen press [MOD  + r] for start),
--> Visual Studio Code (optional)(press [MOD  + v] for start), 
+-> alacritty (),
+-> rofi (Menu press [MOD  + m] for start ),
+-> redshift (Red Screen press [MOD  + r] for start),
+-> visual Studio Code (optional)(press [MOD  + v] for start), 
 -> brightnessctl (for control brightness),
--> pactl (for control volume),
+-> python-psutil (sensors temperature and memory RAM)
+-> fhe (image background)
+-> picom 
+
 -> Ho my bash (Optional for decorate Alacritty)
 
 ################################################
